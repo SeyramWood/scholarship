@@ -1,0 +1,16 @@
+@keyframes mini-nav-active-animate {
+    0% {
+        transform: translateX(-3px);
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.75;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
