@@ -24,7 +24,7 @@ mix.js("resources/js/app.js", "public/js")
         output: {
             chunkFilename: "js/[name].js?id=[chunkhash]"
         },
-        plugins: [new VuetifyLoaderPlugin()],
+        plugins: [new VuetifyLoaderPlugin()]
     })
     .sourceMaps();
 if (mix.inProduction()) {

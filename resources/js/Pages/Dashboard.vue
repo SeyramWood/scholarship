@@ -2,67 +2,116 @@
   <section class="dashboard">
     <section class="dashboard__top">
       <div class="s__row">
-        <div class="s__col c--3">
+        <div class="s__col c--4">
           <div class="dashboard__card__top">
             <div class="dashboard__card__top__left">
               <div class="dashboard__card__top__left__icon icon--info">
-                <v-icon>mdi-finance</v-icon>
+                <v-icon>mdi-account-group-outline</v-icon>
               </div>
               <div class="dashboard__card__top__left__content">
                 <p>Total Applications</p>
-                <p>34</p>
+                <p>{{ applicantCount.total }}</p>
               </div>
             </div>
             <div class="dashboard__card__top__right text--danger">
-              <p>-25%</p>
+              <p>
+                {{ percentage(applicantCount.total, applicantCount.total) }}
+              </p>
             </div>
           </div>
         </div>
-        <div class="s__col c--3">
+        <div class="s__col c--4">
           <div class="dashboard__card__top">
             <div class="dashboard__card__top__left">
               <div class="dashboard__card__top__left__icon icon--warnning">
-                <v-icon>mdi-finance</v-icon>
+                <v-icon>mdi-book-education-outline</v-icon>
               </div>
               <div class="dashboard__card__top__left__content">
                 <p>In-progress Applications</p>
-                <p>34</p>
+                <p>{{ applicantCount.inProgress }}</p>
               </div>
             </div>
-            <div class="dashboard__card__top__right text--success">
-              <p>+20%</p>
+            <div class="dashboard__card__top__right text--info">
+              <p>
+                {{
+                  percentage(applicantCount.total, applicantCount.inProgress)
+                }}
+              </p>
             </div>
           </div>
         </div>
-        <div class="s__col c--3">
+        <div class="s__col c--4">
+          <div class="dashboard__card__top">
+            <div class="dashboard__card__top__left">
+              <div class="dashboard__card__top__left__icon icon--danger">
+                <v-icon>mdi-bullseye-arrow</v-icon>
+              </div>
+              <div class="dashboard__card__top__left__content">
+                <p>Completed Applications</p>
+                <p>{{ applicantCount.completed }}</p>
+              </div>
+            </div>
+            <div class="dashboard__card__top__right text--warnning">
+              <p>
+                {{ percentage(applicantCount.total, applicantCount.completed) }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="s__row">
+        <div class="s__col c--4">
           <div class="dashboard__card__top">
             <div class="dashboard__card__top__left">
               <div class="dashboard__card__top__left__icon icon--danger">
                 <v-icon>mdi-finance</v-icon>
               </div>
               <div class="dashboard__card__top__left__content">
-                <p>Finished Applications</p>
-                <p>34</p>
+                <p>Scholarship Applications</p>
+                <p>{{ applicantCount.scholarship }}</p>
               </div>
             </div>
             <div class="dashboard__card__top__right text--warnning">
-              <p>-10%</p>
+              <p>
+                {{
+                  percentage(applicantCount.total, applicantCount.scholarship)
+                }}
+              </p>
             </div>
           </div>
         </div>
-        <div class="s__col c--3">
+        <div class="s__col c--4">
           <div class="dashboard__card__top">
             <div class="dashboard__card__top__left">
               <div class="dashboard__card__top__left__icon icon--success">
-                <v-icon>mdi-finance</v-icon>
+                <v-icon>mdi-file-eye-outline</v-icon>
               </div>
               <div class="dashboard__card__top__left__content">
                 <p>Reviewed Applications</p>
+                <p>{{ applicantCount.reviewed }}</p>
+              </div>
+            </div>
+            <div class="dashboard__card__top__right text--danger">
+              <p>
+                {{ percentage(applicantCount.total, applicantCount.reviewed) }}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="s__col c--4">
+          <div class="dashboard__card__top">
+            <div class="dashboard__card__top__left">
+              <div class="dashboard__card__top__left__icon icon--info">
+                <v-icon>mdi-file-check-outline</v-icon>
+              </div>
+              <div class="dashboard__card__top__left__content">
+                <p>Admitted Applicants</p>
                 <p>34</p>
               </div>
             </div>
-            <div class="dashboard__card__top__right text--info">
-              <p>-75%</p>
+            <div class="dashboard__card__top__right text--success">
+              <p>-10%</p>
             </div>
           </div>
         </div>
@@ -254,10 +303,31 @@ export default {
   name: "Dashboard",
   components: { SAccordians, SAccordian, SRange, Link },
   layout: Layout,
-
+  props: {
+    applicantCount: {
+      require: true,
+      type: Object,
+    },
+    latestApplicants: {
+      require: true,
+      type: Array,
+    },
+  },
+  beforeMount() {
+    this.$nextTick(() => {
+      // console.log(this.latestApplicants);
+    });
+  },
   methods: {
     clickMe() {
       console.log("click me");
+    },
+    percentage(total, count) {
+      const results = (count / total) * 100;
+      if (Number.isInteger(results)) {
+        return `${(count / total) * 100}%`;
+      }
+      return `${((count / total) * 100).toFixed(2)}%`;
     },
   },
 };

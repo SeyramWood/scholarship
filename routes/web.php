@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/config', function () {
+  Artisan::call('config:clear');
+  Artisan::call('cache:clear');
+  Artisan::call('config:cache');
+  Artisan::call('storage:link');
+  return 'Done';
+});
 
-Route::get('/dashboard', 'DashboardController@index');
-Route::get('/dashboard/applicants', 'DashboardController@applicants')->name('applicants');
-Route::get('/dashboard/reviewed-applicants', 'DashboardController@reviewedApplicants')->name('reviewed.applicants');
+
 Route::get('/login', 'Auth\LoginController@index')->name('login');
+
+Route::prefix('dashboard')->group(function () {
+  Route::get('/', 'DashboardController@index')->name('dashboard');
+  Route::get('/applicants', 'DashboardController@applicants')->name('applicants');
+  Route::get('/reviewed-applicants', 'DashboardController@reviewedApplicants')->name('reviewed.applicants');
+
+  Route::get('/filter-applicants/{keys}', 'ApplicantController@filter');
+});
