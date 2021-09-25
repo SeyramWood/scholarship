@@ -25,12 +25,43 @@ trait ApplicantTrait
   public function getApplicants($limit = null)
   {
     if ($limit) {
-      return Applicant::select('id', 'first_name', 'last_name', 'desired_major')
+      return Applicant::select('id', 'first_name', 'last_name', 'email', 'desired_major')
         ->limit($limit)
         ->orderByDesc('id')->get();
     }
     return Applicant::select('id', 'first_name', 'last_name', 'email', 'contact_number', 'desired_major')
       ->orderByDesc('id')->get();
+  }
+  public function getReviewedApplicants($limit = null)
+  {
+    if ($limit) {
+      return Review::join('applicants', 'applicants.id', '=', 'reviews.applicant_id')
+        ->where('applicants.scholarship', '!=', '')
+        ->select(
+          'reviews.id',
+          'reviews.reviewer_name',
+          'applicants.first_name',
+          'applicants.last_name',
+          'applicants.email',
+          'applicants.contact_number',
+          'applicants.desired_major'
+        )
+        ->limit($limit)
+        ->orderByDesc('reviews.id')->get();
+    }
+    return Review::join('applicants', 'applicants.id', '=', 'reviews.applicant_id')
+      ->where('applicants.scholarship', '!=', '')
+      ->select(
+        'reviews.id',
+        'reviews.reviewer_name',
+        'applicants.first_name',
+        'applicants.last_name',
+        'applicants.email',
+        'applicants.contact_number',
+        'applicants.desired_major'
+      )
+      ->limit($limit)
+      ->orderByDesc('reviews.id')->get();
   }
 
   public function filterApplicants($keys)

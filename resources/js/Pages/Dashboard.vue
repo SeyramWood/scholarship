@@ -99,7 +99,7 @@
           </div>
         </div>
 
-        <div class="s__col c--4">
+        <!-- <div class="s__col c--4">
           <div class="dashboard__card__top">
             <div class="dashboard__card__top__left">
               <div class="dashboard__card__top__left__icon icon--info">
@@ -114,7 +114,7 @@
               <p>-10%</p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
     <s-accordians :defaultIndex="0">
@@ -131,7 +131,7 @@
               </div>
             </div>
             <div class="collapse__header__right">
-              <div class="progress">
+              <!-- <div class="progress">
                 <v-progress-circular
                   :value="65"
                   color="primary"
@@ -140,7 +140,7 @@
                 >
                   65%
                 </v-progress-circular>
-              </div>
+              </div> -->
               <div class="fat__arrow">
                 <div class="arrow"></div>
               </div>
@@ -148,44 +148,21 @@
           </section>
         </template>
         <section class="collapse__content">
-          <div class="collapse__content__timeline">
+          <div
+            class="collapse__content__timeline"
+            v-for="app in getApplicants"
+            :key="app.id"
+          >
             <div class="line"></div>
             <div class="dot"></div>
             <div class="title">
-              <span>Project Management</span>
+              <span>{{ `${app.first_name} ${app.last_name}` }}</span>
             </div>
             <div class="user">
               <div class="sperator"></div>
               <div class="details">
-                <span>Seyram Wood</span>
-                <div class="avatar">
-                  <img src="" alt="av" srcset="" />
-                </div>
+                <span>{{ app.email }}</span>
               </div>
-              <div class="sperator"></div>
-            </div>
-            <div class="date">
-              <span>Jan 01 - Mar 12</span>
-            </div>
-          </div>
-          <div class="collapse__content__timeline">
-            <div class="line"></div>
-            <div class="dot"></div>
-            <div class="title">
-              <span>Law</span>
-            </div>
-            <div class="user">
-              <div class="sperator"></div>
-              <div class="details">
-                <span>Seyram Wood</span>
-                <div class="avatar">
-                  <img src="" alt="av" srcset="" />
-                </div>
-              </div>
-              <div class="sperator"></div>
-            </div>
-            <div class="date">
-              <span>Jan 01 - Mar 12</span>
             </div>
           </div>
           <div class="collapse__content__btn">
@@ -216,7 +193,7 @@
               </div>
             </div>
             <div class="collapse__header__right">
-              <div class="progress">
+              <!-- <div class="progress">
                 <v-progress-circular
                   :value="65"
                   color="primary"
@@ -225,7 +202,7 @@
                 >
                   65%
                 </v-progress-circular>
-              </div>
+              </div> -->
               <div class="fat__arrow">
                 <div class="arrow"></div>
               </div>
@@ -233,44 +210,21 @@
           </section>
         </template>
         <section class="collapse__content">
-          <div class="collapse__content__timeline">
+          <div
+            class="collapse__content__timeline"
+            v-for="app in getReviewedApplicants"
+            :key="app.id"
+          >
             <div class="line"></div>
             <div class="dot"></div>
             <div class="title">
-              <span>Project Management</span>
+              <span>{{ `${app.first_name} ${app.last_name}` }}</span>
             </div>
             <div class="user">
               <div class="sperator"></div>
               <div class="details">
-                <span>Seyram Wood</span>
-                <div class="avatar">
-                  <img src="" alt="av" srcset="" />
-                </div>
+                <span>{{ app.email }}</span>
               </div>
-              <div class="sperator"></div>
-            </div>
-            <div class="date">
-              <span>Jan 01 - Mar 12</span>
-            </div>
-          </div>
-          <div class="collapse__content__timeline">
-            <div class="line"></div>
-            <div class="dot"></div>
-            <div class="title">
-              <span>Law</span>
-            </div>
-            <div class="user">
-              <div class="sperator"></div>
-              <div class="details">
-                <span>Seyram Wood</span>
-                <div class="avatar">
-                  <img src="" alt="av" srcset="" />
-                </div>
-              </div>
-              <div class="sperator"></div>
-            </div>
-            <div class="date">
-              <span>Jan 01 - Mar 12</span>
             </div>
           </div>
           <div class="collapse__content__btn">
@@ -312,11 +266,18 @@ export default {
       require: true,
       type: Array,
     },
+    latestReviewedApplicants: {
+      require: true,
+      type: Array,
+    },
   },
-  beforeMount() {
-    this.$nextTick(() => {
-      // console.log(this.latestApplicants);
-    });
+  computed: {
+    getApplicants() {
+      return this.latestApplicants;
+    },
+    getReviewedApplicants() {
+      return this.latestReviewedApplicants;
+    },
   },
   methods: {
     clickMe() {

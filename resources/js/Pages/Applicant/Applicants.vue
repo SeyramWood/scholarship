@@ -139,9 +139,9 @@ export default {
     isFiltered: false,
 
     json_fields: {
-      name: "name",
-      email: "email",
-      phone: "contact_number",
+      Name: "name",
+      Email: "email",
+      Phone: "contact_number",
       "Desired Major": "desired_major",
     },
     json_data: [],
@@ -153,23 +153,6 @@ export default {
         },
       ],
     ],
-
-    desserts: [],
-    editedIndex: -1,
-    editedItem: {
-      name: "",
-      calories: 0,
-      fat: 0,
-      carbs: 0,
-      protein: 0,
-    },
-    defaultItem: {
-      name: "",
-      calories: 0,
-      fat: 0,
-      carbs: 0,
-      protein: 0,
-    },
   }),
 
   watch: {

@@ -68,7 +68,7 @@
             </div>
           </div>
           <div class="d__side__nav__content__tab">
-            <s-tabs mb="mb-3">
+            <!-- <s-tabs mb="mb-3">
               <s-tab label="Activity">
                 <s-accordians :defaultIndex="0">
                   <s-accordian label="Today">
@@ -150,7 +150,7 @@
                 dicta nam et? Accusantium odit fugit voluptatum aperiam rem
                 aliquid libero cumque ex quidem asperiores.
               </s-tab>
-            </s-tabs>
+            </s-tabs> -->
           </div>
         </main>
       </aside>
@@ -189,12 +189,12 @@
                     </v-menu>
                   </Link>
                 </li>
-                <li class="top__bar__nav__links__link">
+                <!-- <li class="top__bar__nav__links__link">
                   <Link href="/dashboard"> Team </Link>
                 </li>
                 <li class="top__bar__nav__links__link">
                   <Link href="/dashboard"> People </Link>
-                </li>
+                </li> -->
               </ul>
             </nav>
             <div class="search__bar">
