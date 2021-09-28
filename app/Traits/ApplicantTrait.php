@@ -56,9 +56,20 @@ trait ApplicantTrait
         'reviews.reviewer_name',
         'applicants.first_name',
         'applicants.last_name',
+        'applicants.gender',
+        'applicants.date_of_birth',
         'applicants.email',
         'applicants.contact_number',
-        'applicants.desired_major'
+        'applicants.desired_major',
+        'applicants.city',
+        'applicants.citizenship',
+        'applicants.authentication_code',
+        'applicants.guardian_one_name',
+        'applicants.guardian_one_email',
+        'applicants.guardian_one_phone_number',
+        'applicants.guardian_two_name',
+        'applicants.guardian_two_email',
+        'applicants.guardian_two_phone_number',
       )
       ->limit($limit)
       ->orderByDesc('reviews.id')->get();
