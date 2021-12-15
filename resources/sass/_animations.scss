@@ -14,3 +14,20 @@
         opacity: 1;
     }
 }
+@keyframes arrow-infinite {
+    0% {
+        transform: translateY(-4rem);
+        opacity: 0;
+    }
+    25%,
+    35% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.75;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

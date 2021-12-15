@@ -23,6 +23,9 @@ Route::get('/config', function () {
 });
 
 
+Route::get('/', 'PageController@index')->name('home');
+
+
 Route::get('/login', 'Auth\LoginController@index')->name('login');
 
 Route::prefix('dashboard')->group(function () {

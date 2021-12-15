@@ -1,0 +1,195 @@
+.home {
+    width: 100%;
+    &__nav {
+        width: 100%;
+        height: 8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 $container-nav;
+
+        &__brand {
+            width: 13rem;
+            & > img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__links {
+            height: 100%;
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            & > li {
+                position: relative;
+
+                &:not(:first-child) {
+                    padding-left: 2rem;
+                }
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 0%;
+                    height: 2px;
+                    transition: width 0.4s ease-in-out;
+                }
+                & > a {
+                    display: inline-block;
+                    color: $white;
+                    letter-spacing: 1.2px;
+                    text-transform: uppercase;
+                }
+                &:hover {
+                    &::after {
+                        width: 100%;
+                        background-color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    &__banner {
+        width: 100%;
+        height: 100vh;
+        background-image: repeating-linear-gradient(
+                to bottom,
+                rgba($primary, 0.829),
+                rgba($primary, 0.829)
+            ),
+            url("/storage/banner.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        &__cta {
+            width: 100%;
+            height: calc(100vh - 16rem);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & > article {
+                color: $white;
+                & > h3 {
+                    font-size: 3rem;
+                    line-height: 1;
+                }
+
+                & > h1 {
+                    font-size: 6rem;
+                    line-height: 1.2;
+                }
+                & > h1:last-child {
+                    font-size: 5rem;
+                    text-align: right;
+                    color: $secondary;
+                }
+            }
+        }
+        &__icon {
+            width: 100%;
+            height: 8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            & > a {
+                color: $white !important;
+                display: inline-block;
+                animation: arrow-infinite 0.7s ease-out 0.2s infinite alternate;
+                & > i {
+                    font-size: 5rem !important;
+                    color: inherit !important;
+                }
+
+                &:hover {
+                    animation-play-state: paused;
+                }
+            }
+        }
+    }
+
+    &__about {
+        width: 100%;
+        padding: 8rem 0;
+        background: $white;
+        &__title {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            color: $text;
+            & > h1 {
+                font-size: 2rem;
+                color: $secondary;
+                margin-bottom: 2rem;
+            }
+        }
+
+        &__description {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 5rem 0;
+
+            & > article.article {
+                width: 60%;
+                padding: 0 0 0 $container;
+                & > .programs__title {
+                    margin: 1rem 0;
+                }
+                & > .programs {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+
+                    & > .programs__program {
+                        width: 15rem;
+                        height: 10rem;
+                        padding: 2rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+                            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+                            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+                        &:not(:last-child) {
+                            margin-right: 2rem;
+                            margin-bottom: 2rem;
+                        }
+                    }
+                }
+            }
+            & > div.image {
+                width: 40%;
+
+                & > img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    &__apply {
+        width: 100%;
+        min-height: 100vh;
+        background: $secondary;
+        padding: 5rem 0;
+
+        &__title {
+            text-align: center;
+            font-size: 8rem;
+            color: $primary;
+            margin-bottom: 2rem;
+        }
+
+        &__form__wrapper {
+            width: 100%;
+        }
+    }
+}
