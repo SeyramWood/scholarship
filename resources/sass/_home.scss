@@ -91,7 +91,19 @@
                 height: calc(100vh - 27rem);
             }
             & > article {
+                width: 50%;
                 color: $white;
+                font-size: 2rem;
+                @include respond-down(md) {
+                    width: 100%;
+                    text-align: center;
+                    padding: 0 5rem;
+                }
+                @include respond-only(xs) {
+                    width: 100%;
+                    padding: 0 2rem;
+                }
+
                 & > h3 {
                     font-size: 3rem;
                     line-height: 1;
@@ -187,68 +199,171 @@
         }
 
         &__description {
+            $card-padding: 5rem;
+            $description-height: 55rem;
+            $description-height-halve: calc(#{$description-height} / 6);
+            $line-width: 5rem;
+            $kite: 0.5rem;
+
             width: 100%;
             display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 2rem 10rem;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 2rem 5rem;
+            height: $description-height;
+            color: $white;
 
-            & > article.article {
-                width: 100%;
-                // padding: 0 0 0 $container;
-                & > .programs__title {
+            & .about-title {
+                & > h1 {
+                    font-size: 1.6rem;
+                    letter-spacing: 1.8px;
+                    line-height: 1;
+                    color: $primary;
+                }
+                margin-bottom: 1rem;
+                &:not(:first-child) {
                     margin: 1rem 0;
                 }
-                @include respond-down(md) {
-                    font-size: 2.5rem;
-                }
-                & > .programs {
-                    width: 100%;
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    flex-wrap: wrap;
+            }
 
-                    & > .programs__program {
-                        width: 15rem;
-                        height: 10rem;
-                        padding: 2rem;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        text-align: center;
-                        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-                            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-                            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-                        &:not(:last-child) {
-                            margin-right: 2rem;
-                            margin-bottom: 2rem;
-                        }
+            &__left {
+                width: calc(50% - 1rem);
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 $card-padding;
+                background-image: repeating-linear-gradient(
+                        to bottom,
+                        rgba($secondary, 0.666),
+                        rgba($secondary, 0.666)
+                    ),
+                    url("/storage/mis.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+
+                & article {
+                    margin-top: 1rem;
+                    & > p {
+                        margin-bottom: 1rem !important;
                     }
                 }
             }
-            & > div.image {
-                // width: 40%;
+            &__right {
+                width: calc(50% - 1rem);
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 $card-padding;
+                background-image: repeating-linear-gradient(
+                        to bottom,
+                        rgba($secondary, 0.666),
+                        rgba($secondary, 0.666)
+                    ),
+                    url("/storage/scholarship.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
 
-                // & > img {
-                //     width: 100%;
-                //     height: 100%;
-                // }
+            & .line {
+                width: $line-width;
+                display: flex;
+                align-items: center;
+                margin: 0.5rem 0;
+                &__kite {
+                    width: $kite;
+                    height: $kite;
+                    background: red;
+                    transform: rotate(45deg);
+                }
+                &__main {
+                    width: calc(#{$line-width} - calc(#{$kite} * 2));
+                    height: calc(#{$kite} / 2);
+                    background: red;
+                }
             }
             @include respond-down(md) {
-                padding: 2rem 5rem;
+                $card-padding: 2rem;
+                $description-height: 35rem;
+                width: 100%;
+                height: calc(
+                    (#{$description-height} * 2 + #{$description-height-halve})
+                );
+                padding: 0 2rem;
+
+                & .about-title {
+                    & > h1 {
+                        font-size: $title-md;
+                        letter-spacing: 1.8px;
+                        line-height: 1;
+                    }
+                    margin-bottom: 1rem;
+                    &:not(:first-child) {
+                        margin: 1rem 0;
+                    }
+                }
+
+                &__left {
+                    padding: 0 $card-padding;
+
+                    & article {
+                        margin-top: 1rem;
+                        font-size: $para-md;
+                    }
+                }
+                &__right {
+                    & article {
+                        font-size: $para-md;
+                    }
+                }
             }
             @include respond-only(xs) {
+                $description-height: 70rem;
                 width: 100%;
-                flex-direction: column-reverse;
-                padding: 2rem 0;
-                & > article.article {
-                    width: 100%;
-                    padding: 0 2rem;
-                    margin-top: 2rem;
+                height: calc(
+                    (#{$description-height} * 2 + #{$description-height-halve})
+                );
+                padding: 0 2rem;
+                flex-direction: column;
+                // background: burlywood;
+
+                & .about-title {
+                    & > h1 {
+                        font-size: $title-sm;
+                        letter-spacing: 1.8px;
+                        line-height: 1;
+                    }
+                    margin-bottom: 1rem;
+                    &:not(:first-child) {
+                        margin: 1rem 0;
+                    }
                 }
-                & > div.image {
+
+                &__left {
                     width: 100%;
+                    height: calc(
+                        calc(
+                                #{$description-height} + #{$description-height-halve}
+                            ) - 1rem
+                    );
+                    padding: 0 $card-padding;
+
+                    & article {
+                        margin-top: 1rem;
+                        font-size: $para-sm;
+                    }
+                }
+                &__right {
+                    width: 100%;
+                    height: calc(#{$description-height} - 1rem);
+                    padding: 0 $card-padding;
+
+                    & article {
+                        font-size: $para-sm;
+                    }
                 }
             }
         }
@@ -262,20 +377,33 @@
 
         &__title {
             text-align: center;
-            font-size: 3rem;
+            font-size: 1.6rem;
+            letter-spacing: 1.8px;
+            line-height: 1;
             color: $primary;
-            margin-bottom: 2rem;
-            // margin-left: $container;
+            margin-bottom: 4rem;
+            @include respond-down(md) {
+                font-size: $title-md;
+            }
+            @include respond-only(xs) {
+                font-size: $title-sm;
+            }
         }
 
         &__form__wrapper {
             width: 100%;
             // display: none;
+            & .v-btn.v-size--large {
+                font-size: 1.8rem !important;
+            }
             @include respond-down(md) {
-                .v-input,
-                .v-label {
+                & .v-input,
+                & .v-label {
                     font-size: 2.5rem !important;
                 }
+                // & .v-btn.v-size--large {
+                //     font-size: 1rem !important;
+                // }
             }
         }
 

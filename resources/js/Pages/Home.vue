@@ -13,10 +13,18 @@
           </ul>
         </nav>
         <section class="home__banner__cta">
-          <article>
+          <!-- <article>
             <h3>Mastercard Foundation</h3>
             <h1>Scholars Program</h1>
             <h1>a A.D.U.!</h1>
+          </article> -->
+          <article>
+            Les « Scholars Program Partners » de la Fondation Mastercard est une
+            initiative mondiale visant à éduquer et à former la prochaine
+            génération de leaders qui contribueront au progrès social et
+            économique du continent Africain. La Mastercard Foundation et
+            L’African Development Universalis (A.D.U.) ont le plaisir de vous
+            annoncer les bourses Mastercard Foundation Scholars Program à A.D.U.
           </article>
         </section>
         <section class="home__banner__icon">
@@ -27,73 +35,99 @@
       </header>
       <section class="home__about" id="about">
         <main class="home__about__description">
-          <article class="article">
-            <p>
-              Les « Scholars Program Partners » de la Fondation Mastercard est
-              une initiative mondiale visant à éduquer et à former la prochaine
-              génération de leaders qui contribueront au progrès social et
-              économique du continent Africain.
-            </p>
-            <p>
-              La Mastercard Foundation et L’African Development Universalis
-              (A.D.U.) ont le plaisir de vous annoncer les bourses Mastercard
-              Foundation Scholars Program à A.D.U.
-            </p>
-            <p>
-              Ce programme offre une bourse d’études complète aux étudiants,
-              cette bourse permet à des jeunes issus de communautés
-              économiquement défavorisées, qui ont fait preuve de talent
-              scolaire et de potentiel de leadership, d'accéder à une éducation
-              de qualité et pertinente.
-            </p>
-            <p>
-              Le Mastercard Foundation Scholars Program fournit un soutien
-              financier, social, académiques et dispose d’un de soutien complet
-              comprenant un éventail de services de mentorat et accompagne leur
-              transition vers des opportunités d’emploi et entreprenariat.
-            </p>
+          <section class="home__about__description__left">
+            <article>
+              <div class="about-title">
+                <h1 class="">About Us</h1>
+                <div class="line">
+                  <div class="line__kite"></div>
+                  <div class="line__main"></div>
+                  <div class="line__kite"></div>
+                </div>
+              </div>
+              <!-- <p>
+                Les « Scholars Program Partners » de la Fondation Mastercard est
+                une initiative mondiale visant à éduquer et à former la
+                prochaine génération de leaders qui contribueront au progrès
+                social et économique du continent Africain. La Mastercard
+                Foundation et L’African Development Universalis (A.D.U.) ont le
+                plaisir de vous annoncer les bourses Mastercard Foundation
+                Scholars Program à A.D.U.
+              </p> -->
+              <p>
+                Ce programme offre une bourse d’études complète aux étudiants,
+                cette bourse permet à des jeunes issus de communautés
+                économiquement défavorisées, qui ont fait preuve de talent
+                scolaire et de potentiel de leadership, d'accéder à une
+                éducation de qualité et pertinente. Le Mastercard Foundation
+                Scholars Program fournit un soutien financier, social,
+                académiques et dispose d’un de soutien complet comprenant un
+                éventail de services de mentorat et accompagne leur transition
+                vers des opportunités d’emploi et entreprenariat.
+              </p>
+              <p>
+                Ce programme qui n’est par ailleurs implémenté que dans de
+                prestigieuses universités comme : Stanford, Berkeley et
+                Wellesley aux Etats Unis; Université de Toronto et McGill au
+                Canada; Sciences Po en France; Universite de Cape Town,
+                Makerere, Ashesi et ALU en Afrique, Et est porté en Afrique
+                francophone avec l’université Gaston Berger au Sénégal, 2iE au
+                Burkina Faso et A.D.U. au Niger.
+              </p>
+            </article>
+          </section>
+          <section class="home__about__description__right">
+            <article>
+              <div class="about-title">
+                <h1 class="">La bourse</h1>
+                <div class="line">
+                  <div class="line__kite"></div>
+                  <div class="line__main"></div>
+                  <div class="line__kite"></div>
+                </div>
+              </div>
+              <ul>
+                <li>Les frais de scolarité</li>
+                <li>L’hébergement</li>
+                <li>Matériels scolaires</li>
+                <li>Transport</li>
+                <li>Allocations mensuelles</li>
+              </ul>
 
-            <p>
-              Ce programme qui n’est par ailleurs implémenté que dans de
-              prestigieuses universités comme : Stanford, Berkeley et Wellesley
-              aux Etats Unis; Université de Toronto et McGill au Canada;
-              Sciences Po en France; Universite de Cape Town, Makerere, Ashesi
-              et ALU en Afrique, Et est porté en Afrique francophone avec
-              l’université Gaston Berger au Sénégal, 2iE au Burkina Faso et
-              A.D.U. au Niger.
-            </p>
+              <div class="about-title">
+                <h1 class="">Les critères</h1>
+                <div class="line">
+                  <div class="line__kite"></div>
+                  <div class="line__main"></div>
+                  <div class="line__kite"></div>
+                </div>
+              </div>
+              <ul>
+                <li>
+                  Posséder un BAC ou un diplôme équivalent avec un excellent
+                  parcours académique.
+                </li>
+                <li>Démontrer un besoin clair de soutien financier</li>
+              </ul>
 
-            <h1 class="programs__title">La bourse</h1>
-            <ul>
-              <li>Les frais de scolarité</li>
-              <li>L’hébergement</li>
-              <li>Matériels scolaires</li>
-              <li>Transport</li>
-              <li>Allocations mensuelles</li>
-            </ul>
-
-            <h1 class="programs__title">Les critères</h1>
-            <ul>
-              <li>
-                Posséder un BAC ou un diplôme équivalent avec un excellent
-                parcours académique.
-              </li>
-              <li>Démontrer un besoin clair de soutien financier</li>
-            </ul>
-
-            <h1 class="programs__title">Programmes</h1>
-            <ul>
-              <li>Droit privé</li>
-              <li>
-                Business Administration (Comptabilité, Gestion, Systèmes
-                d’information, Marketing, Ressources Humaines…
-              </li>
-              <li>Intelligence Artificielle (Informatique)</li>
-            </ul>
-          </article>
-          <!-- <div class="image">
-            <img src="/storage/girl.png " alt="" srcset="" />
-          </div> -->
+              <div class="about-title">
+                <h1 class="">Programmes</h1>
+                <div class="line">
+                  <div class="line__kite"></div>
+                  <div class="line__main"></div>
+                  <div class="line__kite"></div>
+                </div>
+              </div>
+              <ul>
+                <li>Droit privé</li>
+                <li>
+                  Business Administration (Comptabilité, Gestion, Systèmes
+                  d’information, Marketing, Ressources Humaines…
+                </li>
+                <li>Intelligence Artificielle (Informatique)</li>
+              </ul>
+            </article>
+          </section>
         </main>
       </section>
 
@@ -312,7 +346,7 @@
                       :loading="isSubmitting"
                       block
                     >
-                      Submit
+                      Soumettre
                     </v-btn>
                     <v-spacer></v-spacer>
                   </v-card-actions>
