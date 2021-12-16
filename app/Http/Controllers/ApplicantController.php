@@ -23,6 +23,7 @@ class ApplicantController extends Controller
             'year_of_bac' => $applicantRequest->année,
             'type_of_bac' => $applicantRequest->type,
             'question' => $applicantRequest->question,
+            'school' => $applicantRequest->école,
         ]);
 
         return Redirect::route('home');

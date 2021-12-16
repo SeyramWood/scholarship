@@ -23,6 +23,7 @@ class CreateApplicantsTable extends Migration
             $table->string('year_of_bac');
             $table->string('type_of_bac');
             $table->string('question');
+            $table->string('school')->nullable();
             $table->timestamps();
         });
     }

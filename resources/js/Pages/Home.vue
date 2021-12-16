@@ -7,8 +7,8 @@
             <img src="/storage/logo-2.png" alt="" srcset="" />
           </div>
           <ul class="home__nav__links">
-            <li><a href="#about" v-smooth-scroll>About</a></li>
-            <li><a href="#apply" v-smooth-scroll>Apply</a></li>
+            <li><a href="#about" v-smooth-scroll>À propos</a></li>
+            <li><a href="#apply" v-smooth-scroll>Pré-Inscription</a></li>
             <!-- <li><a href="#">Contact</a></li> -->
           </ul>
         </nav>
@@ -32,50 +32,76 @@
               Les « Scholars Program Partners » de la Fondation Mastercard est
               une initiative mondiale visant à éduquer et à former la prochaine
               génération de leaders qui contribueront au progrès social et
-              économique du continent Africain. L’African development
-              universalis (A.D.U.) et la Mastercard Foundation ont le plaisir de
-              vous annoncer les bourses Mastercard Foundation Scholars Program à
-              A.D.U.
+              économique du continent Africain.
+            </p>
+            <p>
+              La Mastercard Foundation et L’African Development Universalis
+              (A.D.U.) ont le plaisir de vous annoncer les bourses Mastercard
+              Foundation Scholars Program à A.D.U.
             </p>
             <p>
               Ce programme offre une bourse d’études complète aux étudiants,
               cette bourse permet à des jeunes issus de communautés
               économiquement défavorisées, qui ont fait preuve de talent
               scolaire et de potentiel de leadership, d'accéder à une éducation
-              de qualité et pertinente. Le Mastercard Foundation Scholars
-              Program fournit un soutien financier, social et académique. L’aide
-              financière inclut, les frais de scolarité, l’hébergement, les
-              livres, matériels scolaires, le transport, allocations et dispose
-              d’un réseau de soutien complet comprenant un éventail de services
-              de mentorat et accompagne leur transition vers des opportunités
-              d’emploi et entreprenariat. Ce programme qui est pour la première
-              fois au Niger, et en exclusivité avec A.D.U., n’est par ailleurs
-              implémenté que dans de prestigieuses universités comme : Stanford,
-              Berkeley et Wellesley aux Etats Unis;Université de Toronto et
-              McGill au Canada;Sciences Po en France;Universite de Cape Town,
-              Makerere, Ashesi et ALU en Afrique;
+              de qualité et pertinente.
             </p>
+            <p>
+              Le Mastercard Foundation Scholars Program fournit un soutien
+              financier, social, académiques et dispose d’un de soutien complet
+              comprenant un éventail de services de mentorat et accompagne leur
+              transition vers des opportunités d’emploi et entreprenariat.
+            </p>
+
+            <p>
+              Ce programme qui n’est par ailleurs implémenté que dans de
+              prestigieuses universités comme : Stanford, Berkeley et Wellesley
+              aux Etats Unis; Université de Toronto et McGill au Canada;
+              Sciences Po en France; Universite de Cape Town, Makerere, Ashesi
+              et ALU en Afrique, Et est porté en Afrique francophone avec
+              l’université Gaston Berger au Sénégal, 2iE au Burkina Faso et
+              A.D.U. au Niger.
+            </p>
+
+            <h1 class="programs__title">La bourse</h1>
+            <ul>
+              <li>Les frais de scolarité</li>
+              <li>L’hébergement</li>
+              <li>Matériels scolaires</li>
+              <li>Transport</li>
+              <li>Allocations mensuelles</li>
+            </ul>
+
+            <h1 class="programs__title">Les critères</h1>
+            <ul>
+              <li>
+                Posséder un BAC ou un diplôme équivalent avec un excellent
+                parcours académique.
+              </li>
+              <li>Démontrer un besoin clair de soutien financier</li>
+            </ul>
 
             <h1 class="programs__title">Programmes</h1>
             <ul>
-              <li>Droit</li>
-              <li>Comptabilité</li>
-              <li>Intelligence Artificielle</li>
-              <li>Management des projets</li>
-              <li>Systèmes de gestion de l'information</li>
+              <li>Droit privé</li>
+              <li>
+                Business Administration (Comptabilité, Gestion, Systèmes
+                d’information, Marketing, Ressources Humaines…
+              </li>
+              <li>Intelligence Artificielle (Informatique)</li>
             </ul>
           </article>
-          <div class="image">
+          <!-- <div class="image">
             <img src="/storage/girl.png " alt="" srcset="" />
-          </div>
+          </div> -->
         </main>
       </section>
 
       <section class="home__apply" id="apply">
-        <h1 class="home__apply__title">Apply</h1>
+        <h1 class="home__apply__title">Pré-Inscription</h1>
         <div class="home__apply__form__wrapper">
           <v-row justify="center">
-            <v-col cols="12" sm="10" md="8" lg="6">
+            <v-col cols="12" sm="12" md="8" lg="8">
               <v-card class="form-card">
                 <form @submit.prevent="apply()">
                   <v-card-text>
@@ -87,6 +113,7 @@
                           label="Nom"
                           placeholder="Nom"
                           :error-messages="detailErrors.nom"
+                          outlined
                         ></v-text-field>
                       </v-col>
                       <v-col cols="12" sm="12" md="6" lg="6">
@@ -96,6 +123,7 @@
                           label="Prénom"
                           placeholder="Prénom"
                           :error-messages="detailErrors.prénom"
+                          outlined
                         ></v-text-field>
                       </v-col>
                     </v-row>
@@ -113,12 +141,12 @@
                           <template v-slot:activator="{ on, attrs }">
                             <v-text-field
                               label="Age"
-                              prepend-icon="mdi-calendar"
                               readonly
                               v-bind="attrs"
                               v-on="on"
                               v-model="details.age"
                               :error-messages="detailErrors.age"
+                              outlined
                             ></v-text-field>
                           </template>
                           <v-date-picker
@@ -151,12 +179,13 @@
                           label="E-mail"
                           placeholder="E-mail"
                           :error-messages="detailErrors.email"
+                          outlined
                         ></v-text-field>
                       </v-col>
                       <v-col cols="12" sm="12" md="6" lg="6">
                         <v-row>
                           <v-col cols="5" sm="5">
-                            <v-autocomplete
+                            <v-select
                               ref="country"
                               v-model="details.code"
                               :items="callingCodes"
@@ -164,6 +193,7 @@
                               item-value="code"
                               label="Code"
                               :error-messages="detailErrors.code"
+                              outlined
                             >
                               <template v-slot:selection="data">
                                 <div class="country-code">
@@ -189,7 +219,7 @@
                                   <span class="">{{ data.item.code }}</span>
                                 </div>
                               </template>
-                            </v-autocomplete>
+                            </v-select>
                           </v-col>
                           <v-col cols="7" sm="7">
                             <v-text-field
@@ -198,6 +228,7 @@
                               label="Numéro de téléphone"
                               placeholder="Numéro de téléphone"
                               :error-messages="detailErrors.téléphone"
+                              outlined
                             >
                             </v-text-field>
                           </v-col>
@@ -214,6 +245,7 @@
                           label="Année du BAC"
                           placeholder="Select..."
                           :error-messages="detailErrors.année"
+                          outlined
                         ></v-autocomplete>
                       </v-col>
                       <v-col cols="12" sm="12" md="6" lg="6">
@@ -224,13 +256,14 @@
                           label="Type de BAC"
                           placeholder="Select..."
                           :error-messages="detailErrors.type"
+                          outlined
                         ></v-autocomplete>
                       </v-col>
                     </v-row>
 
                     <v-row>
                       <v-col cols="12" sm="12">
-                        <p class="text-1">
+                        <p class="v-label">
                           Etes-vous actuellement inscrit dans une université ou
                           institut ?
                         </p>
@@ -242,6 +275,18 @@
                           <v-radio label="Oui" value="Oui"></v-radio>
                           <v-radio label="Non" value="Non"></v-radio>
                         </v-radio-group>
+                      </v-col>
+                    </v-row>
+                    <v-row v-if="details.question === 'Oui'">
+                      <v-col cols="12" sm="12">
+                        <v-text-field
+                          ref="école"
+                          v-model="details.école"
+                          label="Si oui, laquelle?"
+                          placeholder="Si oui, laquelle?"
+                          :error-messages="detailErrors.école"
+                          outlined
+                        ></v-text-field>
                       </v-col>
                     </v-row>
                   </v-card-text>
@@ -265,6 +310,7 @@
                       color="primary"
                       large
                       :loading="isSubmitting"
+                      block
                     >
                       Submit
                     </v-btn>
@@ -320,6 +366,7 @@ export default {
       année: "",
       type: "",
       question: "",
+      école: "",
     },
     detailErrors: {
       nom: "",
@@ -331,6 +378,7 @@ export default {
       année: "",
       type: "",
       question: "",
+      école: "",
     },
   }),
 
@@ -343,7 +391,9 @@ export default {
         {
           ...this.details,
           age: new Date(this.details.age).toISOString(),
-          téléphone: `${this.details.code}${this.details.téléphone}`,
+          téléphone: this.details.téléphone
+            ? `${this.details.code}${this.details.téléphone}`
+            : "",
         },
         {
           preserveScroll: true,
@@ -371,6 +421,7 @@ export default {
         année: err.année || "",
         type: err.type || "",
         question: err.question || "",
+        école: err.école || "",
       };
     },
     setForm() {
@@ -386,6 +437,7 @@ export default {
         année: "",
         type: "",
         question: "",
+        école: "",
       };
     },
     async getCountries() {

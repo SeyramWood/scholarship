@@ -68,7 +68,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-        '/home/u555210925/domains/eduappgh.com/public_html/dashboard/storage' => storage_path('app/public'),
+        // '/home/u555210925/domains/eduappgh.com/public_html/dashboard/storage' => storage_path('app/public'),
     ],
 
 ];

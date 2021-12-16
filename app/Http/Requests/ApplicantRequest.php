@@ -33,6 +33,7 @@ class ApplicantRequest extends FormRequest
             'année' => 'required|numeric',
             'type' => 'required|string',
             'question' => 'required|string',
+            'école' => 'exclude_unless:question,Oui|required|string',
         ];
     }
 }

@@ -10,4 +10,8 @@ class Applicant extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    protected $casts = [
+        'age' => 'date:Y-m-d',
+    ];
 }

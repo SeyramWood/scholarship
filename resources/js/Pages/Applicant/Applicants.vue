@@ -140,6 +140,7 @@ export default {
       { text: "Année de BAC", value: "year_of_bac" },
       { text: "Type de BAC", value: "type_of_bac" },
       { text: "Question", value: "question" },
+      { text: "École", value: "school" },
     ],
     loading: false,
     filteredApplicants: [],
@@ -155,6 +156,7 @@ export default {
       "Année de BAC": "year_of_bac",
       "Type de BAC": "type_of_bac",
       Question: "question",
+      École: "school",
     },
     json_data: [],
     json_meta: [

@@ -191,16 +191,16 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            padding: 2rem 0;
+            padding: 2rem 10rem;
 
             & > article.article {
-                width: 60%;
-                padding: 0 0 0 $container;
+                width: 100%;
+                // padding: 0 0 0 $container;
                 & > .programs__title {
                     margin: 1rem 0;
                 }
                 @include respond-down(md) {
-                    font-size: 1.6rem;
+                    font-size: 2.5rem;
                 }
                 & > .programs {
                     width: 100%;
@@ -228,17 +228,20 @@
                 }
             }
             & > div.image {
-                width: 40%;
+                // width: 40%;
 
-                & > img {
-                    width: 100%;
-                    height: 100%;
-                }
+                // & > img {
+                //     width: 100%;
+                //     height: 100%;
+                // }
             }
-
+            @include respond-down(md) {
+                padding: 2rem 5rem;
+            }
             @include respond-only(xs) {
+                width: 100%;
                 flex-direction: column-reverse;
-
+                padding: 2rem 0;
                 & > article.article {
                     width: 100%;
                     padding: 0 2rem;
@@ -267,10 +270,17 @@
 
         &__form__wrapper {
             width: 100%;
+            // display: none;
+            @include respond-down(md) {
+                .v-input,
+                .v-label {
+                    font-size: 2.5rem !important;
+                }
+            }
         }
 
         @include respond-only(xs) {
-            padding: 5rem 2rem;
+            padding: 5rem 0;
 
             &__title {
             }
