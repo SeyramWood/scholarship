@@ -2,7 +2,7 @@
   <v-data-table
     :headers="headers"
     :items="isFiltered ? getFilteredApplicants : getApplicants"
-    :sort-by="['desired_major']"
+    :sort-by="['nom']"
     :sort-desc="[false, true]"
     :loading="loading"
     loading-text="Loading... Please wait"
@@ -23,7 +23,7 @@
           hide-details
         ></v-text-field>
         <v-spacer></v-spacer>
-        <form
+        <!-- <form
           class="d-flex"
           style="width: 400px"
           @submit.prevent="fetchApplicants()"
@@ -49,7 +49,7 @@
             <v-icon>mdi-filter-outline</v-icon>
             <span>Filter</span>
           </v-btn>
-        </form>
+        </form> -->
         <v-spacer></v-spacer>
         <download-excel
           class="btn btn-default"
@@ -75,6 +75,9 @@
           </v-btn>
         </download-excel>
       </v-toolbar>
+    </template>
+    <template v-slot:item.age="{ item }">
+      {{ formatDate2(item.age) }}
     </template>
     <template v-slot:no-data>
       <v-icon small class="mr-2"> mdi-database-outline </v-icon>
@@ -103,7 +106,6 @@ export default {
       return this.applicants.map((a) => {
         return {
           ...a,
-          name: `${a.last_name} ${a.first_name}`,
         };
       });
     },
@@ -111,7 +113,6 @@ export default {
       return this.filteredApplicants.map((a) => {
         return {
           ...a,
-          name: `${a.last_name} ${a.first_name}`,
         };
       });
     },
@@ -125,13 +126,20 @@ export default {
     dialogDelete: false,
     headers: [
       {
-        text: "Full Name",
-        align: "start",
-        value: "name",
+        text: "Nom",
+        align: "surname",
+        value: "surname",
       },
+      {
+        text: "Prénom",
+        value: "first_name",
+      },
+      { text: "Age", value: "age" },
       { text: "Email", value: "email" },
-      { text: "Phone", value: "contact_number" },
-      { text: "Desired Major", value: "desired_major" },
+      { text: "Téléphone", value: "phone" },
+      { text: "Année de BAC", value: "year_of_bac" },
+      { text: "Type de BAC", value: "type_of_bac" },
+      { text: "Question", value: "question" },
     ],
     loading: false,
     filteredApplicants: [],
@@ -139,10 +147,14 @@ export default {
     isFiltered: false,
 
     json_fields: {
-      Name: "name",
+      Nom: "surname",
+      Prénom: "first_name",
+      Age: "age",
+      Téléphone: "phone",
       Email: "email",
-      Phone: "contact_number",
-      "Desired Major": "desired_major",
+      "Année de BAC": "year_of_bac",
+      "Type de BAC": "type_of_bac",
+      Question: "question",
     },
     json_data: [],
     json_meta: [

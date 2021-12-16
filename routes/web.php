@@ -33,5 +33,6 @@ Route::prefix('dashboard')->group(function () {
   Route::get('/applicants', 'DashboardController@applicants')->name('applicants');
   Route::get('/reviewed-applicants', 'DashboardController@reviewedApplicants')->name('reviewed.applicants');
 
-  Route::get('/filter-applicants/{keys}', 'ApplicantController@filter');
+  // Route::get('/filter-applicants/{keys}', 'ApplicantController@filter');
+  Route::post('/apply', 'ApplicantController@index');
 });

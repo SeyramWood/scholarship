@@ -1,3 +1,13 @@
 .text-1 {
     font-size: 1.4rem !important;
 }
+.form-card {
+    border: 2px solid $primary !important;
+}
+
+.s-alert {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

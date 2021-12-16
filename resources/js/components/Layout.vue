@@ -160,34 +160,7 @@
             <nav class="top__bar__nav">
               <ul class="top__bar__nav__links">
                 <li class="top__bar__nav__links__link is-link-active">
-                  <Link href="/dashboard">
-                    <v-menu
-                      open-on-hover
-                      bottom
-                      transition="slide-y-transition"
-                      offset-y
-                    >
-                      <template v-slot:activator="{ on, attrs }">
-                        <v-btn v-bind="attrs" v-on="on">
-                          ADU
-                          <span class=""
-                            ><v-icon>mdi-chevron-down</v-icon>
-                          </span>
-                        </v-btn>
-                      </template>
-
-                      <v-list>
-                        <v-list-item
-                          v-for="(item, index) in items"
-                          :key="index"
-                        >
-                          <v-list-item-title>{{
-                            item.title
-                          }}</v-list-item-title>
-                        </v-list-item>
-                      </v-list>
-                    </v-menu>
-                  </Link>
+                  <Link href="/dashboard/applicants"> Applicants </Link>
                 </li>
                 <!-- <li class="top__bar__nav__links__link">
                   <Link href="/dashboard"> Team </Link>

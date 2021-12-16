@@ -156,12 +156,18 @@
             <div class="line"></div>
             <div class="dot"></div>
             <div class="title">
-              <span>{{ `${app.first_name} ${app.last_name}` }}</span>
+              <span>{{ `${app.surname} ${app.first_name}` }}</span>
             </div>
             <div class="user">
               <div class="sperator"></div>
               <div class="details">
                 <span>{{ app.email }}</span>
+              </div>
+            </div>
+            <div class="user">
+              <div class="sperator"></div>
+              <div class="details">
+                <span>{{ app.phone }}</span>
               </div>
             </div>
           </div>
@@ -180,7 +186,7 @@
           </div>
         </section>
       </s-accordian>
-      <s-accordian label="Accordian">
+      <!-- <s-accordian label="Accordian">
         <template #header>
           <section class="collapse__header">
             <div class="collapse__header__left">
@@ -193,7 +199,7 @@
               </div>
             </div>
             <div class="collapse__header__right">
-              <!-- <div class="progress">
+              <div class="progress">
                 <v-progress-circular
                   :value="65"
                   color="primary"
@@ -202,7 +208,7 @@
                 >
                   65%
                 </v-progress-circular>
-              </div> -->
+              </div>
               <div class="fat__arrow">
                 <div class="arrow"></div>
               </div>
@@ -218,7 +224,7 @@
             <div class="line"></div>
             <div class="dot"></div>
             <div class="title">
-              <span>{{ `${app.first_name} ${app.last_name}` }}</span>
+              <span>{{ `${app.surname} ${app.first_name}` }}</span>
             </div>
             <div class="user">
               <div class="sperator"></div>
@@ -241,7 +247,7 @@
             </Link>
           </div>
         </section>
-      </s-accordian>
+      </s-accordian> -->
     </s-accordians>
   </section>
 </template>
@@ -263,10 +269,6 @@ export default {
       type: Object,
     },
     latestApplicants: {
-      require: true,
-      type: Array,
-    },
-    latestReviewedApplicants: {
       require: true,
       type: Array,
     },

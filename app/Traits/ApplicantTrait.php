@@ -15,64 +15,21 @@ trait ApplicantTrait
   {
     return [
       'total' => Applicant::count(),
-      'inProgress' => Applicant::whereNotIn('status', ['completed'])->count(),
-      'completed' => Applicant::whereIn('status', ['completed'])->count(),
-      'scholarship' => Applicant::where('scholarship', '!=', '')->count(),
-      'reviewed' => Review::count()
+      // 'inProgress' => Applicant::whereNotIn('status', ['completed'])->count(),
+      // 'completed' => Applicant::whereIn('status', ['completed'])->count(),
+      // 'scholarship' => Applicant::where('scholarship', '!=', '')->count(),
+      // 'reviewed' => Review::count()
     ];
   }
 
   public function getApplicants($limit = null)
   {
     if ($limit) {
-      return Applicant::select('id', 'first_name', 'last_name', 'email', 'desired_major')
+      return Applicant::select('id', 'surname', 'first_name', 'email', 'phone')
         ->limit($limit)
         ->orderByDesc('id')->get();
     }
-    return Applicant::select('id', 'first_name', 'last_name', 'email', 'contact_number', 'desired_major')
-      ->orderByDesc('id')->get();
-  }
-  public function getReviewedApplicants($limit = null)
-  {
-    if ($limit) {
-      return Review::join('applicants', 'applicants.id', '=', 'reviews.applicant_id')
-        ->where('applicants.scholarship', '!=', '')
-        ->select(
-          'reviews.id',
-          'reviews.reviewer_name',
-          'applicants.first_name',
-          'applicants.last_name',
-          'applicants.email',
-          'applicants.contact_number',
-          'applicants.desired_major'
-        )
-        ->limit($limit)
-        ->orderByDesc('reviews.id')->get();
-    }
-    return Review::join('applicants', 'applicants.id', '=', 'reviews.applicant_id')
-      ->where('applicants.scholarship', '!=', '')
-      ->select(
-        'reviews.id',
-        'reviews.reviewer_name',
-        'applicants.first_name',
-        'applicants.last_name',
-        'applicants.gender',
-        'applicants.date_of_birth',
-        'applicants.email',
-        'applicants.contact_number',
-        'applicants.desired_major',
-        'applicants.city',
-        'applicants.citizenship',
-        'applicants.authentication_code',
-        'applicants.guardian_one_name',
-        'applicants.guardian_one_email',
-        'applicants.guardian_one_phone_number',
-        'applicants.guardian_two_name',
-        'applicants.guardian_two_email',
-        'applicants.guardian_two_phone_number',
-      )
-      ->limit($limit)
-      ->orderByDesc('reviews.id')->get();
+    return Applicant::orderByDesc('id')->get();
   }
 
   public function filterApplicants($keys)

@@ -62,3 +62,57 @@ a:active {
     background-color: $primary;
     color: $white;
 }
+.v-list--dense .v-subheader,
+.v-list--dense .v-subheader {
+    font-size: 1.2rem !important;
+    height: 50px !important;
+    padding: 0 8px;
+}
+.v-list-item--dense .v-list-item__title,
+.v-list-item--dense .v-list-item__subtitle,
+.v-list--dense .v-list-item .v-list-item__title,
+.v-list--dense .v-list-item .v-list-item__subtitle {
+    font-size: 1.1rem !important;
+    line-height: 1.2 !important;
+}
+.v-list--dense .v-list-item,
+.v-list-item {
+    min-height: 30px !important;
+}
+.v-application--is-ltr .v-list-item__action:first-child,
+.v-application--is-ltr .v-list-item__icon:first-child {
+    margin-right: 12px !important;
+}
+.v-application p {
+    margin-bottom: 0 !important;
+}
+
+.theme--dark {
+    // background-color: #1e1e1e;
+    // border-color: #1e1e1e;
+    // color: #fff;
+}
+.v-data-table > .v-data-table__wrapper > table > tbody > tr > td,
+.v-data-table > .v-data-table__wrapper > table > tfoot > tr > td,
+.v-data-table > .v-data-table__wrapper > table > thead > tr > td {
+    font-size: 1.2rem !important;
+}
+.v-data-table > .v-data-table__wrapper > table > tbody > tr > th,
+.v-data-table > .v-data-table__wrapper > table > tfoot > tr > th,
+.v-data-table > .v-data-table__wrapper > table > thead > tr > th {
+    font-size: 1.2rem !important;
+    height: 48px;
+}
+.v-select__slot {
+    justify-content: center !important;
+    & .v-input__append-inner {
+        margin-top: 0 !important;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.v-snack__content {
+    font-size: 1.2rem !important;
+}

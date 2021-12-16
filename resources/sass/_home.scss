@@ -7,13 +7,18 @@
         justify-content: space-between;
         align-items: center;
         padding: 0 $container-nav;
-
         &__brand {
             width: 13rem;
             & > img {
                 width: 100%;
                 height: 100%;
             }
+        }
+        @include respond-down(md) {
+            // height: 1rem;
+        }
+        @include respond-only(xs) {
+            height: 12rem;
         }
         &__links {
             height: 100%;
@@ -39,6 +44,12 @@
                     color: $white;
                     letter-spacing: 1.2px;
                     text-transform: uppercase;
+                    @include respond-down(md) {
+                        font-size: 1.6rem;
+                    }
+                    @include respond-only(xs) {
+                        font-size: 1.4rem;
+                    }
                 }
                 &:hover {
                     &::after {
@@ -47,6 +58,10 @@
                     }
                 }
             }
+        }
+
+        @include respond-only(xs) {
+            padding: 0 2rem;
         }
     }
 
@@ -69,7 +84,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-
+            @include respond-down(md) {
+            }
+            @include respond-only(xs) {
+                // justify-content: flex-start;
+                height: calc(100vh - 27rem);
+            }
             & > article {
                 color: $white;
                 & > h3 {
@@ -82,10 +102,43 @@
                     line-height: 1.2;
                 }
                 & > h1:last-child {
-                    font-size: 5rem;
+                    font-size: 6rem;
                     text-align: right;
-                    color: $secondary;
                 }
+                @include respond-down(md) {
+                    // & > h3 {
+                    //     font-size: 2.5rem;
+                    //     line-height: 1;
+                    // }
+
+                    // & > h1 {
+                    //     font-size: 4.1rem;
+                    //     line-height: 1.2;
+                    // }
+                    // & > h1:last-child {
+                    //     font-size: 3rem;
+                    //     text-align: right;
+                    // }
+                }
+                @include respond-only(xs) {
+                    & > h3 {
+                        font-size: 2.5rem;
+                        line-height: 1;
+                    }
+
+                    & > h1 {
+                        font-size: 4.5rem;
+                        line-height: 1.2;
+                    }
+                    & > h1:last-child {
+                        font-size: 3rem;
+                        text-align: right;
+                    }
+                }
+            }
+
+            @include respond-only(xs) {
+                padding: 0 2rem;
             }
         }
         &__icon {
@@ -107,12 +160,19 @@
                     animation-play-state: paused;
                 }
             }
+
+            @include respond-down(md) {
+                height: 15rem;
+            }
+            @include respond-only(xs) {
+                height: 15rem;
+            }
         }
     }
 
     &__about {
         width: 100%;
-        padding: 8rem 0;
+        padding: 2rem 0;
         background: $white;
         &__title {
             width: 50%;
@@ -131,13 +191,16 @@
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            padding: 5rem 0;
+            padding: 2rem 0;
 
             & > article.article {
                 width: 60%;
                 padding: 0 0 0 $container;
                 & > .programs__title {
                     margin: 1rem 0;
+                }
+                @include respond-down(md) {
+                    font-size: 1.6rem;
                 }
                 & > .programs {
                     width: 100%;
@@ -172,6 +235,19 @@
                     height: 100%;
                 }
             }
+
+            @include respond-only(xs) {
+                flex-direction: column-reverse;
+
+                & > article.article {
+                    width: 100%;
+                    padding: 0 2rem;
+                    margin-top: 2rem;
+                }
+                & > div.image {
+                    width: 100%;
+                }
+            }
         }
     }
 
@@ -183,13 +259,21 @@
 
         &__title {
             text-align: center;
-            font-size: 8rem;
+            font-size: 3rem;
             color: $primary;
             margin-bottom: 2rem;
+            // margin-left: $container;
         }
 
         &__form__wrapper {
             width: 100%;
+        }
+
+        @include respond-only(xs) {
+            padding: 5rem 2rem;
+
+            &__title {
+            }
         }
     }
 }
