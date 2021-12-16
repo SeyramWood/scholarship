@@ -14,6 +14,8 @@ import { DateTime, Interval, Duration } from "luxon";
 import VueMeta from "vue-meta";
 import store from "./store";
 import axios from "axios";
+import AOS from 'aos'
+import 'aos/dist/aos.css';
 
 InertiaProgress.init();
 
@@ -73,6 +75,9 @@ createInertiaApp({
     resolve: name => import(`./Pages/${name}`),
     setup({ el, App, props }) {
         new Vue({
+            created() {
+                AOS.init()
+            },
             vuetify,
             store,
             render: h => h(App, props)

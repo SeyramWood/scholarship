@@ -47,11 +47,11 @@
   25%, 35% {
     opacity: 0.5;
   }
-  50% {
+  50%, 75% {
     opacity: 0.75;
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(1.5rem);
     opacity: 1;
   }
 }
@@ -63,11 +63,11 @@
   25%, 35% {
     opacity: 0.5;
   }
-  50% {
+  50%, 75% {
     opacity: 0.75;
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(1.5rem);
     opacity: 1;
   }
 }
@@ -751,61 +751,49 @@ a:active {
   width: 100%;
   height: calc(100vh - 16rem);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #fff;
+}
+@media only screen and (max-width: 61.999em) {
+  .home__banner__cta {
+    height: calc(100vh - 23rem);
+  }
 }
 @media only screen and (max-width: 35.999em) {
   .home__banner__cta {
+    padding: 0 2rem;
     height: calc(100vh - 27rem);
   }
 }
 .home__banner__cta > article {
   width: 50%;
-  color: #fff;
-  font-size: 2rem;
+  font-size: calc(3.2rem / 2);
+}
+.home__banner__cta > article > h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
 @media only screen and (max-width: 61.999em) {
   .home__banner__cta > article {
     width: 100%;
     text-align: center;
     padding: 0 5rem;
+    font-size: calc(3.2rem / 2);
   }
 }
 @media only screen and (max-width: 35.999em) {
   .home__banner__cta > article {
     width: 100%;
     padding: 0 2rem;
-  }
-}
-.home__banner__cta > article > h3 {
-  font-size: 3rem;
-  line-height: 1;
-}
-.home__banner__cta > article > h1 {
-  font-size: 6rem;
-  line-height: 1.2;
-}
-.home__banner__cta > article > h1:last-child {
-  font-size: 6rem;
-  text-align: right;
-}
-@media only screen and (max-width: 35.999em) {
-  .home__banner__cta > article > h3 {
-    font-size: 2.5rem;
-    line-height: 1;
+    font-size: calc(3.2rem / 1.8);
   }
   .home__banner__cta > article > h1 {
-    font-size: 4.5rem;
+    font-size: 3.2rem;
     line-height: 1.2;
-  }
-  .home__banner__cta > article > h1:last-child {
-    font-size: 3rem;
-    text-align: right;
-  }
-}
-@media only screen and (max-width: 35.999em) {
-  .home__banner__cta {
-    padding: 0 2rem;
+    margin-bottom: 5rem;
   }
 }
 .home__banner__icon {
@@ -830,11 +818,6 @@ a:active {
           animation-play-state: paused;
 }
 @media only screen and (max-width: 61.999em) {
-  .home__banner__icon {
-    height: 15rem;
-  }
-}
-@media only screen and (max-width: 35.999em) {
   .home__banner__icon {
     height: 15rem;
   }
@@ -883,7 +866,7 @@ a:active {
   justify-content: center;
   align-items: center;
   padding: 0 5rem;
-  background-image: repeating-linear-gradient(to bottom, rgba(38, 38, 38, 0.666), rgba(38, 38, 38, 0.666)), url("/storage/mis.jpg");
+  background-image: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.799), rgba(0, 0, 0, 0.799)), url("/storage/mis.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -901,7 +884,7 @@ a:active {
   justify-content: center;
   align-items: center;
   padding: 0 5rem;
-  background-image: repeating-linear-gradient(to bottom, rgba(38, 38, 38, 0.666), rgba(38, 38, 38, 0.666)), url("/storage/scholarship.jpg");
+  background-image: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.799), rgba(0, 0, 0, 0.799)), url("/storage/scholarship.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -993,6 +976,11 @@ a:active {
   background: #262626;
   padding: 5rem 0;
 }
+@media only screen and (max-width: 35.999em) {
+  .home__apply {
+    padding: 5rem 0;
+  }
+}
 .home__apply__title {
   text-align: center;
   font-size: 1.6rem;
@@ -1022,9 +1010,20 @@ a:active {
     font-size: 2.5rem !important;
   }
 }
+.home__apply__form__wrapper .form-card {
+  width: 60%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+@media only screen and (max-width: 61.999em) {
+  .home__apply__form__wrapper .form-card {
+    width: 80%;
+    padding: 2rem;
+  }
+}
 @media only screen and (max-width: 35.999em) {
-  .home__apply {
-    padding: 5rem 0;
+  .home__apply__form__wrapper .form-card {
+    width: 100%;
   }
 }
 

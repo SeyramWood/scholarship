@@ -23,11 +23,12 @@
     35% {
         opacity: 0.5;
     }
-    50% {
+    50%,
+    75% {
         opacity: 0.75;
     }
     100% {
-        transform: translateY(0);
+        transform: translateY(1.5rem);
         opacity: 1;
     }
 }

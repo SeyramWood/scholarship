@@ -15,7 +15,6 @@
             }
         }
         @include respond-down(md) {
-            // height: 1rem;
         }
         @include respond-only(xs) {
             height: 12rem;
@@ -82,75 +81,44 @@
             width: 100%;
             height: calc(100vh - 16rem);
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            color: $white;
             @include respond-down(md) {
+                height: calc(100vh - 23rem);
             }
             @include respond-only(xs) {
-                // justify-content: flex-start;
+                padding: 0 2rem;
                 height: calc(100vh - 27rem);
             }
             & > article {
                 width: 50%;
-                color: $white;
-                font-size: 2rem;
+                font-size: $para-md;
+                & > h1 {
+                    font-size: 3rem;
+                    line-height: 1.2;
+                    margin-bottom: 1rem;
+                }
                 @include respond-down(md) {
                     width: 100%;
                     text-align: center;
                     padding: 0 5rem;
+                    font-size: $para-md;
                 }
                 @include respond-only(xs) {
                     width: 100%;
                     padding: 0 2rem;
-                }
-
-                & > h3 {
-                    font-size: 3rem;
-                    line-height: 1;
-                }
-
-                & > h1 {
-                    font-size: 6rem;
-                    line-height: 1.2;
-                }
-                & > h1:last-child {
-                    font-size: 6rem;
-                    text-align: right;
-                }
-                @include respond-down(md) {
-                    // & > h3 {
-                    //     font-size: 2.5rem;
-                    //     line-height: 1;
-                    // }
-
-                    // & > h1 {
-                    //     font-size: 4.1rem;
-                    //     line-height: 1.2;
-                    // }
-                    // & > h1:last-child {
-                    //     font-size: 3rem;
-                    //     text-align: right;
-                    // }
-                }
-                @include respond-only(xs) {
-                    & > h3 {
-                        font-size: 2.5rem;
-                        line-height: 1;
-                    }
-
+                    font-size: $para-sm;
                     & > h1 {
-                        font-size: 4.5rem;
+                        font-size: $title-sm;
                         line-height: 1.2;
-                    }
-                    & > h1:last-child {
-                        font-size: 3rem;
-                        text-align: right;
+                        margin-bottom: 5rem;
                     }
                 }
             }
 
             @include respond-only(xs) {
-                padding: 0 2rem;
             }
         }
         &__icon {
@@ -177,7 +145,7 @@
                 height: 15rem;
             }
             @include respond-only(xs) {
-                height: 15rem;
+                // height: 15rem;
             }
         }
     }
@@ -235,8 +203,8 @@
                 padding: 0 $card-padding;
                 background-image: repeating-linear-gradient(
                         to bottom,
-                        rgba($secondary, 0.666),
-                        rgba($secondary, 0.666)
+                        rgba(0, 0, 0, 0.799),
+                        rgba(0, 0, 0, 0.799)
                     ),
                     url("/storage/mis.jpg");
                 background-size: cover;
@@ -259,8 +227,8 @@
                 padding: 0 $card-padding;
                 background-image: repeating-linear-gradient(
                         to bottom,
-                        rgba($secondary, 0.666),
-                        rgba($secondary, 0.666)
+                        rgba(0, 0, 0, 0.799),
+                        rgba(0, 0, 0, 0.799)
                     ),
                     url("/storage/scholarship.jpg");
                 background-size: cover;
@@ -374,7 +342,9 @@
         min-height: 100vh;
         background: $secondary;
         padding: 5rem 0;
-
+        @include respond-only(xs) {
+            padding: 5rem 0;
+        }
         &__title {
             text-align: center;
             font-size: 1.6rem;
@@ -392,7 +362,6 @@
 
         &__form__wrapper {
             width: 100%;
-            // display: none;
             & .v-btn.v-size--large {
                 font-size: 1.8rem !important;
             }
@@ -401,16 +370,20 @@
                 & .v-label {
                     font-size: 2.5rem !important;
                 }
-                // & .v-btn.v-size--large {
-                //     font-size: 1rem !important;
-                // }
             }
-        }
 
-        @include respond-only(xs) {
-            padding: 5rem 0;
+            & .form-card {
+                width: 60%;
+                margin: 0 auto;
+                padding: 2rem 0;
 
-            &__title {
+                @include respond-down(md) {
+                    width: 80%;
+                    padding: 2rem;
+                }
+                @include respond-only(xs) {
+                    width: 100%;
+                }
             }
         }
     }

@@ -29,7 +29,7 @@ class ApplicantRequest extends FormRequest
             'age' => 'required|string',
             'email' => 'required|email|unique:applicants,email',
             'code' => 'required|string',
-            'téléphone' => 'required|string|regex:/^\+\d+$/i|unique:applicants,phone|max:15',
+            'téléphone' => 'required|string|regex:/^\+\d+$/i|unique:applicants,phone|min:8|max:15',
             'année' => 'required|numeric',
             'type' => 'required|string',
             'question' => 'required|string',
