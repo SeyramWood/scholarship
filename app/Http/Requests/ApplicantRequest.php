@@ -26,6 +26,7 @@ class ApplicantRequest extends FormRequest
         return [
             'nom' => 'required|string',
             'prénom' => 'required|string',
+            'genre' => 'required|string',
             'age' => 'required|string',
             'email' => 'required|email|unique:applicants,email',
             'code' => 'required|string',

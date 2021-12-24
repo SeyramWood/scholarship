@@ -375,11 +375,11 @@
             & .form-card {
                 width: 60%;
                 margin: 0 auto;
-                padding: 2rem 0;
+                padding: 2rem;
 
                 @include respond-down(md) {
                     width: 80%;
-                    padding: 2rem;
+                    // padding: 2rem;
                 }
                 @include respond-only(xs) {
                     width: 100%;

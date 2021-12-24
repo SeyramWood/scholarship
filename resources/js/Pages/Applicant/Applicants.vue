@@ -134,6 +134,7 @@ export default {
         text: "Prénom",
         value: "first_name",
       },
+      { text: "Genre", value: "genre" },
       { text: "Age", value: "age" },
       { text: "Email", value: "email" },
       { text: "Téléphone", value: "phone" },

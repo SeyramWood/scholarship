@@ -19,7 +19,7 @@
               data-aos-duration="1200"
               data-aos-anchor-placement="bottom-bottom"
             >
-              Mastercard Foundation Scholars Program a A.D.U.!
+              Mastercard Foundation Scholars Program à A.D.U.!
             </h1>
             <p
               data-aos="fade-up"
@@ -76,7 +76,7 @@
               >
                 Ce programme offre une bourse d’études complète aux étudiants,
                 cette bourse permet à des jeunes issus de communautés
-                économiquement défavorisées, qui ont fait preuve de talent
+                économiquement défavorisées, qui ont fait preuve de excellence
                 scolaire et de potentiel de leadership, d'accéder à une
                 éducation de qualité et pertinente. Le Mastercard Foundation
                 Scholars Program fournit un soutien financier, social,
@@ -176,7 +176,7 @@
                 <li>Droit privé</li>
                 <li>
                   Business Administration (Comptabilité, Gestion, Systèmes
-                  d’information, Marketing, Ressources Humaines…
+                  d’information, Marketing, Ressources Humaines…)
                 </li>
                 <li>Intelligence Artificielle (Informatique)</li>
               </ul>
@@ -214,7 +214,18 @@
               </v-row>
 
               <v-row>
-                <v-col cols="12" sm="12">
+                <v-col cols="12" sm="12" md="6" lg="6">
+                  <v-select
+                    ref="genre"
+                    v-model="details.genre"
+                    :items="['Homme', 'Femme']"
+                    label="Genre"
+                    placeholder="Select..."
+                    :error-messages="detailErrors.genre"
+                    outlined
+                  ></v-select>
+                </v-col>
+                <v-col cols="12" sm="12" md="6" lg="6">
                   <v-menu
                     ref="menu"
                     :close-on-content-click="false"
@@ -430,6 +441,7 @@ export default {
     details: {
       nom: "",
       prénom: "",
+      genre: "",
       age: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
         .toISOString()
         .substr(0, 10),
@@ -444,6 +456,7 @@ export default {
     detailErrors: {
       nom: "",
       prénom: "",
+      genre: "",
       age: "",
       email: "",
       code: "",
@@ -487,6 +500,7 @@ export default {
       this.detailErrors = {
         nom: err.nom || "",
         prénom: err.prénom || "",
+        genre: err.genre || "",
         age: err.age || "",
         email: err.email || "",
         code: err.code || "",
@@ -501,6 +515,7 @@ export default {
       this.details = {
         nom: "",
         prénom: "",
+        genre: "",
         age: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
           .toISOString()
           .substr(0, 10),

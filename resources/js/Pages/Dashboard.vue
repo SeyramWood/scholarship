@@ -172,15 +172,7 @@
             </div>
           </div>
           <div class="collapse__content__btn">
-            <Link
-              href="/dashboard/applicants"
-              class="
-                v-btn v-btn--is-elevated v-btn--has-bg
-                theme--light
-                v-size--large
-                secondary
-              "
-            >
+            <Link href="/dashboard/applicants" class="btn">
               View applicants
             </Link>
           </div>

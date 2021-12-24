@@ -17,6 +17,7 @@ class ApplicantController extends Controller
         Applicant::create([
             'surname' => $applicantRequest->nom,
             'first_name' => $applicantRequest->prénom,
+            'genre' => $applicantRequest->genre,
             'age' => $applicantRequest->age,
             'email' => $applicantRequest->email,
             'phone' => $applicantRequest->téléphone,

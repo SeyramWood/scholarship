@@ -17,6 +17,7 @@ class CreateApplicantsTable extends Migration
             $table->id();
             $table->string('surname');
             $table->string('first_name');
+            $table->string('genre');
             $table->string('age');
             $table->string('email')->unique();
             $table->string('phone')->unique();
