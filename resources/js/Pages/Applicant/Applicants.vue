@@ -151,6 +151,7 @@ export default {
     json_fields: {
       Nom: "surname",
       Prénom: "first_name",
+      Genre: "genre",
       Age: "age",
       Téléphone: "phone",
       Email: "email",
